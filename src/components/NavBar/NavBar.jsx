@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 
 const NavBar = ({ user, handleLogout }) => {
     return (
-    <div class="navBar">
+    <div>
       {user ?
-        <nav>
+        <nav className="navBar">
           <div className="nav-wrapper">
             <ul id="nav-mobile" className="right">
               <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
