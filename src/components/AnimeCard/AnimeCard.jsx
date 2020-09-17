@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-function AnimeCard = ({ user, anime, handleDeleteAnime }) => {
+const AnimeCard = ({ user, anime, handleDeleteAnime }) => {
     return ( 
         <Card>
     <Image src='/images/avatar/large/matthew.png' wrapped ui={false}  src={anime.image ? anime.image : "https://www.cebodtelecom.com/wp-content/uploads/2014/09/related_post_no_available_image.png"} onClick={()=> {}}/>

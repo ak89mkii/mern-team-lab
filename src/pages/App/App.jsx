@@ -56,6 +56,7 @@ class App extends Component {
           render={( {location} ) => 
           <AnimeList
             location={location}
+              anime={this.state.anime}
           />
           }/>
         <Route
