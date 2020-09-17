@@ -31,6 +31,24 @@ class App extends Component {
     this.setState({anime})
   }
 
+  handleDeleteAnime = async id =>{
+    if(authService.getUser()){
+      await animeApi.deleteAnime(id)
+      this.setState({
+        anime: this.state.anime.filter(a => a._id !== id)
+      }, this.props.history.push('/movies'))
+    }else{
+      this.props.history.push('/login')
+    }
+  }
+
+  handleUpdateAnime = async updateAnimeData => {
+    const updatedAnime = await animeApi.updateAnime(updateAnimeData)
+    this.setState({
+      anime: this.state.anime.map(a => a._id === updatedAnime._id ? updatedAnime : a)
+    }, ()=>this.props.history.push('/'))
+  }
+
   handleAddAnime = async newAnimeData => {
     const newAnime = await animeApi.createAnime(newAnimeData)
     this.setState({anime: [...this.state.anime, newAnime]},
