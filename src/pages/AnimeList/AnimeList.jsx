@@ -1,9 +1,4 @@
 
-import React, {Component} from 'react'
-import { Link } from "react-router-dom"
-
-import React from 'react'
-
 import React from 'react'
 import AnimeCard from '../../components/AnimeCard/AnimeCard'
 import './AnimeList.css'
@@ -16,7 +11,7 @@ const AnimeList = (props) => {
             <div className='AnimeList-grid'>
                 {props.anime.map(anime =>
                     <AnimeCard key={anime._id} anime={anime}
-                     handleDeleteAnime={handleDeleteAnime}
+                     handleDeleteAnime={props.handleDeleteAnime}
                     />
                     )}
             </div>
