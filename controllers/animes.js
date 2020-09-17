@@ -5,6 +5,13 @@ module.exports ={
     showAnime,
     createAnime,
     deleteAnime,
+    updateAnime
+}
+
+function updateAnime(req, res){
+    Anime.findByIdAndUpdate(req.params.animeId, req.body, {new: true})
+    .then(anime =>
+        res.json(anime) )
 }
 
 function deleteAnime(req, res){
