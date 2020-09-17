@@ -15,6 +15,18 @@ class AnimeList extends Component {
 //     this.setState({ animeList: animeList.results })
 // }
 
+
+class AnimeList extends Component {
+    state = {
+        anime: {
+            name: "fullmental",
+            genre: "adventure"
+        }
+    }
+
+
+
+
     render() {
         return (
             <>
@@ -31,6 +43,7 @@ class AnimeList extends Component {
                 </Link><br></br>
                 </div>
                 )}
+                
             </>
         )
     }

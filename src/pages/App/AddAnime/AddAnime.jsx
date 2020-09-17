@@ -1,62 +1,110 @@
 import React, { Component } from 'react';
 import './AddAnime.css'
-import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
+import { Form, Segment } from 'semantic-ui-react'
 
 class AddAnime extends Component {
     state = { 
-        invalidForm: true,
         formData: {
             name: '',
             genre: '',
-            releaseDate: '',
+            released: '',
             summary: '',
-            episodes: '',
-            favoriteCharacter: [],
-            youtubeUrl: '',
+            episodesMovies: '',
+            youtube: '',
             image: '',
+            characters: [],
         }
      }
+
+     handleSubmit = e =>{
+        e.preventDefault();
+        this.props.handleAddAnime(this.state.formData)
+    }
+
+    handleChange = e => {
+       const formData = {...this.state.formData, [e.target.name]: e.target.value};
+       this.setState({
+       formData
+       });
+    }
+
+   formRef = React.createRef()
     render() { 
+
         return ( 
             <>
-    <Form>
-    <Form.Group widths='equal'>
-      <Form.Field
-        id='form-input-control-first-name'
-        control={Input}
-        label='First name'
-        placeholder='First name'
-      />
-      <Form.Field
-        id='form-input-control-last-name'
-        control={Input}
-        label='Last name'
-        placeholder='Last name'
-      />
-    </Form.Group>
-    <Form.Field
-      id='form-textarea-control-opinion'
-      control={TextArea}
-      label='Opinion'
-      placeholder='Opinion'
-    />
-    <Form.Field
-      id='form-input-control-error-email'
-      control={Input}
-      label='Email'
-      placeholder='joe@schmoe.com'
-      error={{
-        content: 'Please enter a valid email address',
-        pointing: 'below',
-      }}
-    />
-    <Form.Field
-      id='form-button-control-public'
-      control={Button}
-      content='Confirm'
-      label='Label with htmlFor'
-    />
-    </Form>
+          <Segment inverted>
+        <Form inverted ref={this.formRef} onSubmit={this.handleSubmit}>
+          <Form.Group>
+            <Form.Input
+              placeholder='Add Name'
+              name='name'
+              value={this.state.formData.name}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group> 
+            <Form.Input
+              placeholder='Add Genre'
+              name='genre'
+              value={this.state.formData.genre}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group>
+            <Form.Input
+              placeholder='Add Release Date'
+              name='released'
+              value={this.state.formData.released}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group>
+            <Form.Input
+              placeholder='Add Summary'
+              name='summary'
+              value={this.state.formData.summary}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group>
+            <Form.Input
+              placeholder='Add Episodes'
+              name='episodesMovies'
+              value={this.state.formData.episodesMovies}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group>
+            <Form.Input
+              placeholder='Add Favorite Character(s)'
+              name='characters'
+              value={this.state.formData.characters}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group>
+             <Form.Input
+              placeholder='Add Youtube Url'
+              name='youtube'
+              value={this.state.formData.youtube}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group>
+            <Form.Input
+              placeholder='Add Image'
+              name='image'
+              value={this.state.formData.image}
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group>
+            <Form.Button content='Submit' 
+            />
+          </Form.Group>
+        </Form>
+      </Segment>
             </>
          );
     }
