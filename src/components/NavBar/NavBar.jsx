@@ -11,6 +11,8 @@ const NavBar = ({ user, handleLogout }) => {
               <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
               <li><a href="/users" className="nav-link">Users</a></li>
               <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
+              <li><a href="/anime/add" className="nav-link">Add Anime</a></li>
+              <li><a href="/anime/" className="nav-link">Anime List</a></li>
             </ul>
           </div>
         </nav>
@@ -21,8 +23,6 @@ const NavBar = ({ user, handleLogout }) => {
               <li><a href="/login" className="nav-link">Log In</a></li>
               <li><a href="/users" className="nav-link">Users</a></li>
               <li><a href="/signup" className="nav-link">Sign Up</a></li>
-              <li><a href="/anime/add" className="nav-link">Add Anime</a></li>
-              <li><a href="/anime/" className="nav-link">Anime List</a></li>
             </ul>
           </div>
         </nav>
