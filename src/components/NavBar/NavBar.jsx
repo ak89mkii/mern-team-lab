@@ -1,41 +1,8 @@
-// import React, { Component } from 'react';
-// import { Input, Menu } from 'semantic-ui-react'
-
-// const NavBar = ({ user, handleLogout }) => {
-//     return (
-//     <div>
-//       {user ?
-//         <nav className="navBar">
-//           <div className="nav-wrapper">
-//             <ul id="nav-mobile" className="right">
-//               <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
-//               <li><a href="/users" className="nav-link">Users</a></li>
-//               <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
-//               <li><a href="/anime/add" className="nav-link">Add Anime</a></li>
-//               <li><a href="/anime/" className="nav-link">Anime List</a></li>
-//             </ul>
-//           </div>
-//         </nav>
-//       :
-//         <nav>
-//           <div className="nav-wrapper">
-//             <ul id="nav-mobile" className="right">
-//               <li><a href="/login" className="nav-link">Log In</a></li>
-//               <li><a href="/users" className="nav-link">Users</a></li>
-//               <li><a href="/signup" className="nav-link">Sign Up</a></li>
-//             </ul>
-//           </div>
-//         </nav>
-       
-//       }
-//     </div>
-//     )
-// }
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import { Input, Menu } from 'semantic-ui-react'
 
-export default class MenuExampleSecondary extends Component {
+class NavBar extends Component {
   state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -44,37 +11,81 @@ export default class MenuExampleSecondary extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu secondary>
+      <Menu inverted>
         <Menu.Item
+          as={Link}
+          to='/'
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name='messages'
-          active={activeItem === 'messages'}
+          as={Link}
+          to='/anime'
+          name='anime list'
+          active={activeItem === 'anime list'}
           onClick={this.handleItemClick}
+          
         />
-        <Menu.Item
-          name='friends'
-          active={activeItem === 'friends'}
-          onClick={this.handleItemClick}
-        />
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
-          </Menu.Item>
+        {this.props.user ? <>
           <Menu.Item
-            name='logout'
-            active={activeItem === 'logout'}
-            onClick={this.handleItemClick}
-          />
-        </Menu.Menu>
+          as={Link}
+          to='/anime/add'
+          name='add anime'
+          active={activeItem === 'add anime'}
+          onClick={this.handleItemClick}
+        />
+         <Menu.Item
+          as={Link}
+          to='/'
+          name='logout'
+          active={activeItem === 'logout'}
+          onClick={this.props.handleLogout}
+        />
+      
+         </> 
+        : 
+        <> 
+        <Menu.Item
+          as={Link}
+          to='/login'
+          name='login'
+          active={activeItem === 'login'}
+          onClick={this.handleItemClick}
+        />
+        
+        </>}
+       
       </Menu>
     )
   }
 }
+export default NavBar;
 
-// export default NavBar;
 
 
+
+
+// const NavBar = ({ user, handleLogout }) => {
+//   return (
+//     <Menu inverted>
+//       <Menu.Item
+//         name='home'
+//         active={activeItem === 'home'}
+//         onClick={this.handleItemClick}
+//       />
+//       <Menu.Item
+//         name='messages'
+//         active={activeItem === 'messages'}
+//         onClick={this.handleItemClick}
+//       />
+//       <Menu.Item
+//         name='friends'
+//         active={activeItem === 'friends'}
+//         onClick={this.handleItemClick}
+//       />
+//     </Menu>
+//   )
+// }
+
+// export default NavBar
