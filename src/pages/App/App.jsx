@@ -27,8 +27,14 @@ class App extends Component {
   };
 
   async componentDidMount(){
-    const newAnime = await animeApi.getAll()
-    this.setState({anime: [...this.state.anime, newAnime]})
+    const anime = await animeApi.getAll()
+    this.setState({anime})
+  }
+
+  handleAddAnime = async newAnimeData => {
+    const newAnime = await animeApi.createAnime(newAnimeData)
+    this.setState({anime: [...this.state.anime, newAnime]},
+      ()=> this.props.history.push('/'))
   }
 
   render() {
