@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import "./App.css";
+import AddAnime from './AddAnime/AddAnime';
 
 class App extends Component {
   state = {
@@ -60,6 +61,17 @@ class App extends Component {
           path="/users"
           render={() => (user ? <Users /> : <Redirect to="/login" />)}
         />
+          <Route 
+          exact path='/anime/add'
+          render={() =>
+            authService.getUser() ?
+            <AddAnime 
+            handleAddAnime = {this.handleAddAnime}
+            user={this.state.user}
+            />
+          :
+          <Redirect to='/login' />
+          }/>
       </>
     );
   }
