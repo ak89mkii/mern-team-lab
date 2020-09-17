@@ -23,7 +23,7 @@ const AnimeCard = ({ user, anime, handleDeleteAnime, handleUpdateAnime}) => {
       </a>
       <a>
           <button type="submit" onClick={() => handleDeleteAnime(anime._id)}>Delete</button>
-          <button type="submit" onClick={() => handleUpdateAnime(anime._id)}>Update</button>
+          <button type="submit" onClick={() => >Update</button>
       </a>
     </Card.Content>
   </Card>
