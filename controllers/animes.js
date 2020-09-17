@@ -34,7 +34,6 @@ function index(req, res){
 }
 
 function createAnime(req, res){
-    req.body.addedBy = req.user._id
     req.body.character =
     Anime.create(req.body)
     .then(anime =>
