@@ -75,6 +75,9 @@ class App extends Component {
           <AnimeList
             location={location}
               anime={this.state.anime}
+              user={this.state.user}
+              handleDeleteAnime={this.handleDeleteAnime}
+
           />
           }/>
         <Route

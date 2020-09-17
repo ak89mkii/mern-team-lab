@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 
-const AnimeCard = ({ user, anime}) => {
+const AnimeCard = ({ user, anime, handleDeleteAnime, handleUpdateAnime}) => {
     return ( 
         <Card textAlign='center'>
     <Image src='/images/avatar/large/matthew.png' wrapped ui={false}  src={anime.image ? anime.image : "https://www.cebodtelecom.com/wp-content/uploads/2014/09/related_post_no_available_image.png"} onClick={()=> {}}/>
@@ -22,7 +22,8 @@ const AnimeCard = ({ user, anime}) => {
         Favorite Character: {anime.characters}
       </a>
       <a>
-          {anime.youtube}
+          <button type="submit" onClick={() => handleDeleteAnime(anime._id)}>Delete</button>
+          <button type="submit" onClick={() => handleUpdateAnime(anime._id)}>Update</button>
       </a>
     </Card.Content>
   </Card>
