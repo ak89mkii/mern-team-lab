@@ -1,10 +1,11 @@
-<<<<<<< HEAD
+
 import React, {Component} from 'react'
 import { Link } from "react-router-dom"
-=======
+
 import React from 'react'
 
->>>>>>> 12bf9ad7fcb454de69c741de7ad16e8ba4fa3f65
+import React from 'react'
+
 import AnimeCard from '../../components/AnimeCard/AnimeCard'
 import './AnimeList.css'
 
@@ -23,7 +24,3 @@ const AnimeList = (props) => {
 }
  //map( element, idx, array)
 export default AnimeList;
-
-
-
-
