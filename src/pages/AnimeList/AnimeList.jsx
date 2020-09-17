@@ -6,11 +6,12 @@ import { Link } from "react-router-dom"
 
 class AnimeList extends Component {
     state = {
-        anime: {
-            name: "fullmental",
-            genre: "adventure"
-        }
+        AnimeList: "Gundam Wing"
     }
+
+
+
+
 
 
 
