@@ -2,17 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const AnimeCard = ({ user, anime, handleDeleteAnime }) => {
+function AnimeCard = ({ user, anime, handleDeleteAnime }) => {
     return ( 
         <Card>
-    <Image src='/images/avatar/large/matthew.png' wrapped ui={false} />
+    <Image src='/images/avatar/large/matthew.png' wrapped ui={false}  src={anime.image ? anime.image : "https://www.cebodtelecom.com/wp-content/uploads/2014/09/related_post_no_available_image.png"} onClick={()=> {}}/>
     <Card.Content>
-      <Card.Header>Matthew</Card.Header>
+      <Card.Header>{anime.name}</Card.Header>
       <Card.Meta>
-        <span className='date'>Joined in 2015</span>
+        <span>{anime.genre}</span>
+        <span>{anime.released}</span>
       </Card.Meta>
       <Card.Description>
-        Matthew is a musician living in Nashville.
+        {anime.summary}
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
