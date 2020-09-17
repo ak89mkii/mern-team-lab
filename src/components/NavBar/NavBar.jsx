@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 
 const NavBar = ({ user, handleLogout }) => {
     return (
-    <>
+    <div class="navBar">
       {user ?
         <nav>
           <div className="nav-wrapper">
@@ -20,51 +21,16 @@ const NavBar = ({ user, handleLogout }) => {
               <li><a href="/login" className="nav-link">Log In</a></li>
               <li><a href="/users" className="nav-link">Users</a></li>
               <li><a href="/signup" className="nav-link">Sign Up</a></li>
+              <li><a href="/signup" className="nav-link">Sign Up</a></li>
             </ul>
           </div>
         </nav>
+       
       }
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href="/login" className="nav-link">Log In</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href="/signup" className="nav-link">Sign Up</a></li>
-            </ul>
-          </div>
-        </nav>
-
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href="/login" className="nav-link">Log In</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href="/signup" className="nav-link">Sign Up</a></li>
-            </ul>
-          </div>
-        </nav>
-
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href="/login" className="nav-link">Log In</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href="/signup" className="nav-link">Sign Up</a></li>
-            </ul>
-          </div>
-        </nav>
-
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href="/login" className="nav-link">Log In</a></li>
-              <li><a href="/users" className="nav-link">Users</a></li>
-              <li><a href="/signup" className="nav-link">Sign Up</a></li>
-            </ul>
-          </div>
-        </nav>
-    </>
-  )
+    </div>
+    )
 }
 
 export default NavBar;
+
+
