@@ -24,3 +24,12 @@ export function deleteAnime(id){
     .then(res => res.json())
 }
 
+export function updateAnime(anime){
+    return fetch(`${base_url}/${anime._id}`,{
+        method: "PUT",
+        headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },
+        body: JSON.stringify(anime)
+    })
+    .then(res => res.json())
+}
+

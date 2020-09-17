@@ -42,6 +42,13 @@ class App extends Component {
     }
   }
 
+  handleUpdateAnime = async updateAnimeData => {
+    const updatedAnime = await animeApi.updateAnime(updateAnimeData)
+    this.setState({
+      anime: this.state.anime.map(a => a._id === updatedAnime._id ? updatedAnime : a)
+    }, ()=>this.props.history.push('/'))
+  }
+
   handleAddAnime = async newAnimeData => {
     const newAnime = await animeApi.createAnime(newAnimeData)
     this.setState({anime: [...this.state.anime, newAnime]},
