@@ -1,6 +1,5 @@
-import React, {Component} from 'react'
-// import { getAnimeList } from '../../services/api-calls'
-import { Link } from "react-router-dom"
+import React from 'react'
+
 import AnimeCard from '../../components/AnimeCard/AnimeCard'
 
 const AnimeList = (props) => {
