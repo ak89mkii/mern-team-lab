@@ -15,3 +15,5 @@ export function createAnime(anime){
     }, { mode: "cors" })
         .then(res => res.json());
 }
+
+
