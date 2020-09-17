@@ -1,5 +1,7 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+
 
 
 const AnimeCard = ({ user, anime, handleDeleteAnime, handleUpdateAnime}) => {
@@ -21,10 +23,20 @@ const AnimeCard = ({ user, anime, handleDeleteAnime, handleUpdateAnime}) => {
         <Icon name='characters' />
         Favorite Character: {anime.characters}
       </a>
+      <div>
       <a>
           <button type="submit" onClick={() => handleDeleteAnime(anime._id)}>Delete</button>
-          <button type="submit" onClick={() => >Update</button>
+          <Link 
+            className="btn yellow black-text"
+            to={{
+            pathname: '/edit',
+            state: {anime}
+            }}
+            >
+                <button>Edit Anime</button>
+            </Link>
       </a>
+      </div>
     </Card.Content>
   </Card>
      );
