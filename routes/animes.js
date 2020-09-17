@@ -1,6 +1,10 @@
 const router = require('express').Router()
-const animeRouter = require('../controllers/animes')
+const animeCtrl = require('../controllers/animes')
 
-router.post('/', animeRouter.createAnime)
+router.get('/', animeCtrl.index)
+router.get('/:animeId', animeCtrl.showAnime)
+router.post('/', animeCtrl.createAnime)
+router.delete('/animeId', animeCtrl.deleteAnime)
+router.put()
 
 module.exports = router
