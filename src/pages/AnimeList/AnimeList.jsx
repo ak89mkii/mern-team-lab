@@ -1,35 +1,24 @@
 import React, {Component} from 'react'
 // import { getAnimeList } from '../../services/api-calls'
 import { Link } from "react-router-dom"
+import AnimeCard from '../../components/AnimeCard/AnimeCard'
 
+const AnimeList = (props) => {
 
-
-
-class AnimeList extends Component {
-    state = {
-        AnimeList: "Gundam Wing"
-    }
-
-    render() {
-        return (
-            <>
-                <h1>Anime List</h1>
-                {/* {this.state.animeList.map((anime) =>
-                <div key={anime.url}>
-                <Link
-                to={{
-                    pathname: "/anime",
-                    state: { anime }
-                }}
-                >
-                {anime.name}
-                </Link><br></br>
-                </div>
-                )} */}
-                
-            </>
-        )
-    }
+    return( 
+        <>
+            <h1>Anime List:</h1>
+            <div>
+                {props.anime.map(anime =>
+                    <AnimeCard key={anime._id} anime={anime}/>
+                    )}
+            </div>
+        </> 
+    );
 }
+ //map( element, idx, array)
+export default AnimeList;
 
-export default AnimeList
+
+
+
