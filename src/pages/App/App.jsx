@@ -36,7 +36,7 @@ class App extends Component {
       await animeApi.deleteAnime(id)
       this.setState({
         anime: this.state.anime.filter(a => a._id !== id)
-      }, this.props.history.push('/movies'))
+      }, this.props.history.push('/anime'))
     }else{
       this.props.history.push('/login')
     }
