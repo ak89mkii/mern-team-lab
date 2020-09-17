@@ -39,7 +39,7 @@ class App extends Component {
           )}
         />
         <Route 
-          exact path='/animehome/'
+          exact path='/anime/'
           render={( {location} ) => 
           <AnimeList
             location={location}

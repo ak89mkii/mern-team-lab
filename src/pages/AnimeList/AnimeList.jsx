@@ -5,7 +5,7 @@ import { render } from '@testing-library/react'
 
 class AnimeList extends Component {
     state = {
-        AnimeList
+        AnimeList: []
     }
 
 
@@ -19,7 +19,19 @@ async componentDidMount() {
         return (
             <>
                 <h1>Anime List</h1>
-                {this.state.animeList.map((anime))}
+                {this.state.animeList.map((anime) =>
+                <div key={starship.url}>
+                <Link
+                to={{
+                    pathname: "/anime",
+                    state: { anime }
+                }}
+                >
+                {anime.name}
+                </Link><br></br>
+                </div>
+                )}
+            </>
         )
     }
 }
