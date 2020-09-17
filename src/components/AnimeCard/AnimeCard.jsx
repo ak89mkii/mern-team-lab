@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const AnimeCard = ({ user, anime, handleDeleteAnime, handleUpdateAnime}) => {
     return ( 
         <Card textAlign='center'>
-    <Image src='/images/avatar/large/matthew.png' wrapped ui={false}  src={anime.image ? anime.image : "https://www.cebodtelecom.com/wp-content/uploads/2014/09/related_post_no_available_image.png"} onClick={()=> {}}/>
+    <Image  wrapped ui={false}  src={anime.image ? anime.image : "https://picsum.photos/200/300"} onClick={()=> {}}/>
     <Card.Content>
       <Card.Header>{anime.name}</Card.Header>
       <Card.Meta>
