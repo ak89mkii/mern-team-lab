@@ -34,11 +34,10 @@ function index(req, res){
 }
 
 function createAnime(req, res){
-    console.log(req.user)
-    req.body.character =
     Anime.create(req.body)
     .then(anime =>
         res.json(anime)
         )
+    .catch(err => console.log(err))
 }
 
