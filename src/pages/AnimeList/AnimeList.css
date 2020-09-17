@@ -1,3 +1,9 @@
+
+h1 {
+    text-align: center;
+}
+
+
 .AnimeList-grid {
     width: 100%;
     display: grid;
@@ -24,4 +30,5 @@
     grid-gap: 10px;
     justify-items: center;
     }
+
   }

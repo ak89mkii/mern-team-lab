@@ -1,3 +1,9 @@
+
+import React, {Component} from 'react'
+import { Link } from "react-router-dom"
+
+import React from 'react'
+
 import React from 'react'
 
 import AnimeCard from '../../components/AnimeCard/AnimeCard'
@@ -18,7 +24,3 @@ const AnimeList = (props) => {
 }
  //map( element, idx, array)
 export default AnimeList;
-
-
-
-
