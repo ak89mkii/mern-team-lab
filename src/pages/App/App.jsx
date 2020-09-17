@@ -8,10 +8,12 @@ import Users from "../Users/Users";
 import AnimeList from "../AnimeList/AnimeList";
 import "./App.css";
 import AddAnime from './AddAnime/AddAnime';
+import * as animeApi from '../../services/anime-api'
 
 class App extends Component {
   state = {
     user: authService.getUser(),
+    anime: []
   };
 
   handleLogout = () => {
@@ -22,6 +24,11 @@ class App extends Component {
   handleSignupOrLogin = () => {
     this.setState({ user: authService.getUser() });
   };
+
+  async componentDidMount(){
+    const newAnime = await animeApi.getAll()
+    this.setState({anime: [...this.state.anime, newAnime]})
+  }
 
   render() {
     const {user} = this.state
