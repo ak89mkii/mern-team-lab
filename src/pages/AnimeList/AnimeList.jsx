@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 // import { getAnimeList } from '../../services/api-calls'
 import { Link } from "react-router-dom"
-import { render } from '@testing-library/react'
+
+
 
 class AnimeList extends Component {
     state = {
         AnimeList: "Gundam Wing"
     }
+
 
 
 
