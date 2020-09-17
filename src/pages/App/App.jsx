@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import AnimeList from "../AnimeList/AnimeList";
+import 'semantic-ui-css/semantic.min.css'
 import "./App.css";
 import AddAnime from './AddAnime/AddAnime';
 
