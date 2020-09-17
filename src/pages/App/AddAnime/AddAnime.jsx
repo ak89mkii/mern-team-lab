@@ -33,7 +33,8 @@ class AddAnime extends Component {
 
         return ( 
             <>
-          <Segment inverted textAlign='center'>
+          <Segment inverted textAlign='center' className='AddAnime'>
+            <h1>Add Anime:</h1>
         <Form inverted ref={this.formRef} onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Input

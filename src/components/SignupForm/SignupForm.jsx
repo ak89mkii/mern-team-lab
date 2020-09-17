@@ -38,9 +38,11 @@ class SignupForm extends Component {
   render() {
     const { name, email, password, passwordConf } = this.state;
     return (
-      <div>
+      <div className='Signup'>
         <h3>Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <div>
           <input
             type="text"
             autoComplete="off"
@@ -49,7 +51,9 @@ class SignupForm extends Component {
             name="name"
             onChange={this.handleChange}
           />
-          <label htmlFor="name">Name</label>
+          </div>
+          <label htmlFor="email">Email:</label>
+          <div>
           <input
             type="text"
             autoComplete="off"
@@ -58,7 +62,9 @@ class SignupForm extends Component {
             name="email"
             onChange={this.handleChange}
           />
-          <label htmlFor="email">Email</label>
+          </div>
+          <label htmlFor="password">Password:</label>
+          <div>
           <input
             type="password"
             autoComplete="off"
@@ -67,7 +73,9 @@ class SignupForm extends Component {
             name="password"
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
+          </div>
+          <label htmlFor="confirm">Confirm Password:</label>
+          <div>
           <input
             type="password"
             autoComplete="off"
@@ -76,7 +84,7 @@ class SignupForm extends Component {
             name="passwordConf"
             onChange={this.handleChange}
           />
-          <label htmlFor="confirm">Confirm Password</label>
+          </div>
           <button disabled={this.isFormInvalid()}>Sign Up</button>
           &nbsp;&nbsp;
           <Link to="/">Cancel</Link>
