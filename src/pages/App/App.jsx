@@ -5,6 +5,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
+import AnimeList from "../AnimeList/AnimeList";
 import "./App.css";
 
 class App extends Component {
@@ -35,6 +36,13 @@ class App extends Component {
             </main>
           )}
         />
+        <Route 
+          exact path='/animehome/'
+          render={( {location} ) => 
+          <AnimeList
+            location={location}
+          />
+          }/>
         <Route
           exact
           path="/signup"
