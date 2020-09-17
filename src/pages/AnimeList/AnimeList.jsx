@@ -9,20 +9,7 @@ class AnimeList extends Component {
     }
 
 
-// async componentDidMount() {
-//     const AnimeList = await getAnimeList()
-//     console.log(AnimeList)
-//     this.setState({ animeList: animeList.results })
-// }
 
-
-class AnimeList extends Component {
-    state = {
-        anime: {
-            name: "fullmental",
-            genre: "adventure"
-        }
-    }
 
 
 
